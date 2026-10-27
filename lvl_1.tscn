@@ -1,0 +1,189 @@
+[gd_scene load_steps=17 format=3 uid="uid://bfw8mki2rc6ov"]
+
+[ext_resource type="Script" path="res://GameRoot1.gd" id="1_8uhgn"]
+[ext_resource type="Texture2D" uid="uid://dtnt50y0un7kq" path="res://Sprites/Backgrounds/root.png" id="2_lihni"]
+[ext_resource type="Texture2D" uid="uid://c5axnm5w0hyml" path="res://Sprites/Tiles/Default/tile_middle_HEX_4B2D50.png" id="3_ofrhj"]
+[ext_resource type="Texture2D" uid="uid://blxamklm0jjnb" path="res://Sprites/Tiles/Default/tile_overhang_left_HEX_4B2D50.png" id="4_h0dt4"]
+[ext_resource type="Texture2D" uid="uid://dexnwteepvx6h" path="res://Sprites/Tiles/Default/tile_overhang_right_HEX_4B2D50.png" id="5_glxvm"]
+[ext_resource type="Script" path="res://Player.gd" id="6_r3ssb"]
+[ext_resource type="Texture2D" uid="uid://b8wdbm4jm8k8t" path="res://Sprites/Characters/Player.png" id="6_upl4p"]
+[ext_resource type="Script" path="res://Enemy.gd" id="7_463ld"]
+[ext_resource type="Texture2D" uid="uid://unawp5ukasp3" path="res://Sprites/Characters/enemy.png" id="8_o2dum"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q71sk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hifk8"]
+size = Vector2(1152, 69.5)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0ix3i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mr4bp"]
+size = Vector2(9.5, 510)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ochmv"]
+radius = 31.0
+height = 86.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qo04d"]
+radius = 28.0
+height = 88.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7nhsb"]
+radius = 288.085
+
+[node name="start_menu" type="Node2D"]
+
+[node name="GameRoot1" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8uhgn")
+
+[node name="Root" type="Sprite2D" parent="GameRoot1"]
+position = Vector2(579, 323)
+scale = Vector2(1.14844, 1.15299)
+texture = ExtResource("2_lihni")
+
+[node name="Exit" type="Button" parent="GameRoot1"]
+layout_mode = 2
+offset_left = 1059.0
+offset_top = 7.0
+offset_right = 1145.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0.827451, 0.203922, 0.545098, 1)
+theme_override_font_sizes/font_size = 24
+text = "Выход
+"
+
+[node name="ground" type="StaticBody2D" parent="GameRoot1"]
+physics_material_override = SubResource("PhysicsMaterial_q71sk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameRoot1/ground"]
+position = Vector2(576, 545.25)
+shape = SubResource("RectangleShape2D_hifk8")
+
+[node name="ground" type="Node2D" parent="GameRoot1/ground"]
+
+[node name="TileMiddleHex4b2d50" type="Sprite2D" parent="GameRoot1/ground/ground"]
+position = Vector2(801, 543)
+texture = ExtResource("3_ofrhj")
+
+[node name="TileOverhangLeftHex4b2d50" type="Sprite2D" parent="GameRoot1/ground/ground"]
+position = Vector2(33, 543)
+texture = ExtResource("4_h0dt4")
+
+[node name="TileOverhangRightHex4b2d50" type="Sprite2D" parent="GameRoot1/ground/ground"]
+position = Vector2(1119, 543)
+texture = ExtResource("5_glxvm")
+
+[node name="TileMiddleHex4b2d51" type="Sprite2D" parent="GameRoot1/ground/ground"]
+position = Vector2(864, 543)
+texture = ExtResource("3_ofrhj")
+
+[node name="TileMiddleHex4b2d52" type="Sprite2D" parent="GameRoot1/ground/ground"]
+position = Vector2(927, 543)
+texture = ExtResource("3_ofrhj")
+
+[node name="TileMiddleHex4b2d53" type="Sprite2D" parent="GameRoot1/ground/ground"]
+position = Vector2(991, 543)
+texture = ExtResource("3_ofrhj")
+
+[node name="TileMiddleHex4b2d54" type="Sprite2D" parent="GameRoot1/ground/ground"]
+position = Vector2(1055, 543)
+texture = ExtResource("3_ofrhj")
+
+[node name="TileMiddleHex4b2d55" type="Sprite2D" parent="GameRoot1/ground/ground"]
+position = Vector2(609, 543)
+texture = ExtResource("3_ofrhj")
+
+[node name="TileMiddleHex4b2d56" type="Sprite2D" parent="GameRoot1/ground/ground"]
+position = Vector2(545, 543)
+texture = ExtResource("3_ofrhj")
+
+[node name="TileMiddleHex4b2d57" type="Sprite2D" parent="GameRoot1/ground/ground"]
+position = Vector2(673, 543)
+texture = ExtResource("3_ofrhj")
+
+[node name="TileMiddleHex4b2d58" type="Sprite2D" parent="GameRoot1/ground/ground"]
+position = Vector2(737, 543)
+texture = ExtResource("3_ofrhj")
+
+[node name="TileMiddleHex4b2d59" type="Sprite2D" parent="GameRoot1/ground/ground"]
+position = Vector2(97, 543)
+texture = ExtResource("3_ofrhj")
+
+[node name="TileMiddleHex4b2d60" type="Sprite2D" parent="GameRoot1/ground/ground"]
+position = Vector2(161, 543)
+texture = ExtResource("3_ofrhj")
+
+[node name="TileMiddleHex4b2d61" type="Sprite2D" parent="GameRoot1/ground/ground"]
+position = Vector2(225, 543)
+texture = ExtResource("3_ofrhj")
+
+[node name="TileMiddleHex4b2d62" type="Sprite2D" parent="GameRoot1/ground/ground"]
+position = Vector2(289, 543)
+texture = ExtResource("3_ofrhj")
+
+[node name="TileMiddleHex4b2d63" type="Sprite2D" parent="GameRoot1/ground/ground"]
+position = Vector2(353, 543)
+texture = ExtResource("3_ofrhj")
+
+[node name="TileMiddleHex4b2d64" type="Sprite2D" parent="GameRoot1/ground/ground"]
+position = Vector2(417, 543)
+texture = ExtResource("3_ofrhj")
+
+[node name="TileMiddleHex4b2d65" type="Sprite2D" parent="GameRoot1/ground/ground"]
+position = Vector2(481, 543)
+texture = ExtResource("3_ofrhj")
+
+[node name="wall1" type="StaticBody2D" parent="GameRoot1"]
+physics_material_override = SubResource("PhysicsMaterial_0ix3i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameRoot1/wall1"]
+position = Vector2(-4.5, 255)
+shape = SubResource("RectangleShape2D_mr4bp")
+
+[node name="wall2" type="StaticBody2D" parent="GameRoot1"]
+physics_material_override = SubResource("PhysicsMaterial_0ix3i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameRoot1/wall2"]
+position = Vector2(1156.75, 255.5)
+shape = SubResource("RectangleShape2D_mr4bp")
+
+[node name="Player" type="CharacterBody2D" parent="GameRoot1" groups=["player"]]
+position = Vector2(74, 90)
+script = ExtResource("6_r3ssb")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameRoot1/Player"]
+position = Vector2(514, 378)
+texture = ExtResource("6_upl4p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameRoot1/Player"]
+position = Vector2(518, 377)
+shape = SubResource("CapsuleShape2D_ochmv")
+
+[node name="Enemy" type="CharacterBody2D" parent="GameRoot1"]
+position = Vector2(-492, -1)
+script = ExtResource("7_463ld")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameRoot1/Enemy"]
+position = Vector2(522, 468)
+scale = Vector2(0.990909, 0.970588)
+texture = ExtResource("8_o2dum")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameRoot1/Enemy"]
+position = Vector2(522, 466)
+shape = SubResource("CapsuleShape2D_qo04d")
+
+[node name="DetectionArea" type="Area2D" parent="GameRoot1/Enemy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameRoot1/Enemy/DetectionArea"]
+position = Vector2(522, 467)
+shape = SubResource("CircleShape2D_7nhsb")
+
+[connection signal="pressed" from="GameRoot1/Exit" to="GameRoot1" method="_on_exit_pressed" flags=18]
+[connection signal="body_entered" from="GameRoot1/Enemy/DetectionArea" to="GameRoot1/Enemy" method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="GameRoot1/Enemy/DetectionArea" to="GameRoot1/Enemy" method="_on_detection_area_body_exited"]

@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://e7kkv2rctrm1"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_gjoyd"]
+[ext_resource type="Texture2D" uid="uid://dtnt50y0un7kq" path="res://Sprites/Backgrounds/root.png" id="2_8tuj4"]
+
+[node name="start_menu" type="Node2D"]
+
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gjoyd")
+
+[node name="Root" type="Sprite2D" parent="MainMenu"]
+position = Vector2(579, 323)
+scale = Vector2(1.14844, 1.15299)
+texture = ExtResource("2_8tuj4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
+layout_mode = 2
+offset_left = 467.0
+offset_top = 141.0
+offset_right = 707.0
+offset_bottom = 557.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="GameName" type="Label" parent="MainMenu/VBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.827451, 0.203922, 0.545098, 1)
+theme_override_font_sizes/font_size = 44
+text = "  NinjaRun
+
+
+"
+
+[node name="Play" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.827451, 0.203922, 0.545098, 1)
+theme_override_font_sizes/font_size = 32
+text = "Играть"
+
+[node name="Levels" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.827451, 0.203922, 0.545098, 1)
+theme_override_font_sizes/font_size = 24
+text = "Уровни"
+
+[node name="Exit" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.827451, 0.203922, 0.545098, 1)
+theme_override_font_sizes/font_size = 24
+text = "Выход
+"
+
+[connection signal="pressed" from="MainMenu/VBoxContainer/Play" to="MainMenu" method="_on_play_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/Levels" to="MainMenu" method="_on_levels_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/Exit" to="MainMenu" method="_on_exit_pressed"]
